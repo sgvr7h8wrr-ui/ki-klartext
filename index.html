@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI Klartext – KI einfach verstehen</title>
+<meta name="description" content="KI Klartext erklärt Künstliche Intelligenz einfach, praktisch und verständlich für Einsteiger.">
+<style>
+:root{--bg:#f7f8fc;--surface:#fff;--text:#172033;--muted:#657084;--primary:#5b5ce2;--purple:#7c3aed;--soft:#eeedff;--line:#e6e9f0;--dark:#182033;--ok:#157a52;--warn:#9a5a00;--shadow:0 18px 55px rgba(23,32,51,.08);--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(247,248,252,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(230,233,240,.8)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;font-size:1.15rem;letter-spacing:-.04em}.logo span{color:var(--primary)}nav{display:flex;gap:23px;color:#4d586b;font-size:.92rem}nav a:hover{color:var(--primary)}
+.hero{padding:86px 0 72px;display:grid;grid-template-columns:1.12fr .88fr;gap:65px;align-items:center}.badge{display:inline-flex;background:var(--soft);color:#4f46c5;padding:8px 13px;border-radius:999px;font-weight:800;font-size:.82rem;margin-bottom:20px}.hero h1{font-size:clamp(2.8rem,6vw,5rem);line-height:1.01;letter-spacing:-.065em}.gradient{background:linear-gradient(110deg,var(--primary),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:1.13rem;color:var(--muted);max-width:650px;margin:22px 0 28px}.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:13px;font-weight:800;cursor:pointer;border:0}.primary{background:var(--dark);color:#fff}.secondary{background:#fff;border:1px solid var(--line)}
+.hero-art{min-height:390px;border-radius:32px;background:linear-gradient(145deg,#e9e8ff,#f8f1ff);position:relative;overflow:hidden;box-shadow:var(--shadow);padding:28px}.orb{position:absolute;width:260px;height:260px;border-radius:50%;right:-65px;top:-75px;background:linear-gradient(135deg,#8b7cff,#d7d1ff)}.bubble{position:absolute;top:62px;left:28px;background:#fff;border-radius:17px;padding:15px 18px;box-shadow:0 12px 30px #5148c91c;max-width:250px}.bubble small{color:var(--primary);font-weight:800}.ai-panel{position:absolute;left:28px;right:28px;bottom:28px;background:rgba(255,255,255,.92);border-radius:20px;padding:21px;border:1px solid #fff}.ai-panel strong{display:block;margin-bottom:5px}.check{display:flex;gap:8px;margin-top:12px;color:var(--ok);font-size:.88rem;font-weight:700}
+section{padding:76px 0}.section-head{max-width:710px;margin-bottom:34px}.kicker{text-transform:uppercase;letter-spacing:.13em;font-size:.73rem;color:var(--primary);font-weight:900;margin-bottom:8px}h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.05em}.section-head p{color:var(--muted);margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:25px;box-shadow:0 5px 22px #17203308}.icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:var(--soft);font-size:1.25rem;margin-bottom:17px}.card h3{margin-bottom:7px}.card p{color:var(--muted);font-size:.94rem}
+.explain{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:start}.steps{display:grid;gap:12px}.step{display:flex;gap:15px;background:#fff;border:1px solid var(--line);padding:18px;border-radius:17px}.num{min-width:34px;height:34px;border-radius:50%;background:var(--soft);color:#5148c9;display:grid;place-items:center;font-weight:900}.step p{color:var(--muted);font-size:.92rem}.step strong{display:block;margin-bottom:3px}
+.prompt-box{background:var(--dark);color:#fff;border-radius:25px;padding:28px;box-shadow:var(--shadow)}.prompt-box .label{color:#bdb8ff;font-weight:900;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em}.prompt-box h3{font-size:1.5rem;margin:8px 0 14px}.prompt{background:#252d41;padding:17px;border-radius:14px;color:#e8ebf4;font-size:.93rem}.prompt em{color:#bdb8ff;font-style:normal}.tipline{margin-top:16px;color:#c9cfdb;font-size:.86rem}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:16px}.rule{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;gap:14px}.rule .n{font-weight:900;color:var(--primary);font-size:1.15rem}.rule p{color:var(--muted);font-size:.92rem;margin-top:3px}
+.alerts{display:grid;grid-template-columns:1fr 1fr;gap:18px}.alert{padding:25px;border-radius:20px;border:1px solid}.alert.safe{background:#edf9f4;border-color:#cceee0}.alert.caution{background:#fff7e8;border-color:#f4dfb7}.alert h3{margin-bottom:7px}.alert p{color:#586274;font-size:.93rem}
+.quiz{background:linear-gradient(135deg,#242d45,#171d2e);color:#fff;border-radius:28px;padding:42px}.quiz p{color:#cbd1dd}.quiz-question{margin:25px 0 20px;font-size:1.35rem;font-weight:800}.answers{display:grid;gap:10px}.answer{padding:14px 16px;background:#2d374e;border:1px solid #3b465d;color:#fff;border-radius:13px;text-align:left;cursor:pointer;font:inherit}.answer:hover{background:#39455f}.answer.correct{background:#1d6a4b;border-color:#2e9d70}.answer.wrong{background:#7a3d3d;border-color:#b45b5b}.result{min-height:28px;margin-top:14px;font-weight:700}
+.glossary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.term{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.term strong{display:block;color:var(--primary);margin-bottom:4px}.term p{font-size:.84rem;color:var(--muted)}
+.cta{background:var(--soft);border:1px solid #dedcff;border-radius:28px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta p{color:var(--muted);margin-top:8px;max-width:650px}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.footer-row{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:820px){nav{display:none}.hero,.explain{grid-template-columns:1fr}.hero{padding-top:55px}.grid{grid-template-columns:1fr}.rules,.alerts{grid-template-columns:1fr}.glossary{grid-template-columns:1fr 1fr}.cta{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.glossary{grid-template-columns:1fr}.hero-art{min-height:330px}}
+</style>
+</head>
+<body>
+<header><div class="container nav"><a class="logo" href="#">KI <span>Klartext</span></a><nav><a href="#was-ist-ki">Was ist KI?</a><a href="#start">Erste Schritte</a><a href="#sicherheit">Sicherheit</a><a href="#quiz">Quiz</a></nav></div></header>
+
+<main>
+<section class="hero">
+<div><div class="badge">✦ Keine Vorkenntnisse nötig</div><h1>KI klingt kompliziert? <span class="gradient">Muss es nicht.</span></h1><p>Willkommen bei KI Klartext. Hier lernst du Schritt für Schritt, was Künstliche Intelligenz kann, wie du sie sinnvoll nutzt und worauf du achten solltest.</p><div class="buttons"><a class="btn primary" href="#was-ist-ki">Einfach anfangen →</a><a class="btn secondary" href="#quiz">Mini-Quiz</a></div></div>
+<div class="hero-art"><div class="orb"></div><div class="bubble"><small>DEINE FRAGE</small><br>„Was kann ich mit KI eigentlich machen?“</div><div class="ai-panel"><strong>Die kurze Antwort:</strong> Sehr viel – wenn du weißt, wie du sie richtig einsetzt.<div class="check">✓ verstehen &nbsp; ✓ ausprobieren &nbsp; ✓ überprüfen</div></div></div>
+</section>
+
+<section id="was-ist-ki"><div class="container"><div class="section-head"><div class="kicker">01 · Grundlagen</div><h2>Was ist Künstliche Intelligenz?</h2><p>Ganz einfach gesagt: KI sind Computersysteme, die Aufgaben bearbeiten können, für die wir normalerweise menschliche Fähigkeiten brauchen – etwa Sprache verstehen, Bilder erkennen oder Texte erzeugen.</p></div>
+<div class="grid"><article class="card"><div class="icon">🧠</div><h3>KI lernt aus Daten</h3><p>Modelle werden mit großen Mengen an Beispielen trainiert. Dadurch lernen sie Muster, Zusammenhänge und Wahrscheinlichkeiten.</p></article><article class="card"><div class="icon">💬</div><h3>Generative KI</h3><p>Tools wie Chatbots können neue Texte, Bilder, Ideen, Zusammenfassungen oder Code erzeugen.</p></article><article class="card"><div class="icon">⚠️</div><h3>KI ist nicht unfehlbar</h3><p>Eine KI kann überzeugend klingen und trotzdem falsch liegen. Deshalb bleibt menschliches Prüfen wichtig.</p></article></div></div></section>
+
+<section id="start"><div class="container"><div class="section-head"><div class="kicker">02 · Loslegen</div><h2>Dein erster Kontakt mit KI</h2><p>Du musst kein Technikprofi sein. Ein guter Einstieg besteht aus vier einfachen Schritten.</p></div>
+<div class="explain"><div class="steps"><div class="step"><div class="num">1</div><div><strong>Aufgabe nennen</strong><p>Was möchtest du erreichen? Zum Beispiel: „Ich möchte eine Einladung schreiben.“</p></div></div><div class="step"><div class="num">2</div><div><strong>Kontext geben</strong><p>Für wen ist der Text? Welcher Ton? Wie lang soll er sein?</p></div></div><div class="step"><div class="num">3</div><div><strong>Ergebnis prüfen</strong><p>Lies die Antwort aufmerksam und kontrolliere wichtige Fakten.</p></div></div><div class="step"><div class="num">4</div><div><strong>Nachbessern</strong><p>Gefällt dir etwas nicht? Sag der KI konkret, was sie ändern soll.</p></div></div></div>
+<div class="prompt-box"><div class="label">Beispiel für einen guten Prompt</div><h3>Je mehr hilfreicher Kontext, desto besser.</h3><div class="prompt">„Du bist mein <em>Schreibassistent</em>. Formuliere eine <em>freundliche Einladung</em> zu meinem 50. Geburtstag. Sie soll <em>locker und persönlich</em> klingen und maximal <em>100 Wörter</em> lang sein.“</div><div class="tipline">💡 Tipp: Du kannst eine KI jederzeit um eine zweite, kürzere oder einfachere Version bitten.</div></div></div></div></section>
+
+<section id="sicherheit"><div class="container"><div class="section-head"><div class="kicker">03 · Sicherheit</div><h2>Was sollte ich einer KI geben – und was lieber nicht?</h2><p>Behandle einen KI-Chat nicht automatisch wie einen privaten Safe.</p></div>
+<div class="alerts"><div class="alert safe"><h3>✓ Eher unkritisch</h3><p>Allgemeine Fragen, eigene Texte zur Überarbeitung, öffentliche Informationen, Ideen oder fiktive Beispiele.</p></div><div class="alert caution"><h3>! Vorsicht</h3><p>Passwörter, Bankdaten, Gesundheitsdaten, vertrauliche Geschäftsunterlagen oder Daten anderer Personen gehören nicht unüberlegt in einen Chat.</p></div></div>
+<div style="height:18px"></div><div class="rules">
+<div class="rule"><div class="n">01</div><div><strong>Prüfe wichtige Fakten.</strong><p>Besonders bei Gesundheit, Recht, Finanzen oder aktuellen Ereignissen.</p></div></div>
+<div class="rule"><div class="n">02</div><div><strong>Schütze persönliche Daten.</strong><p>Frage dich vor dem Absenden: Muss die KI diese Information wirklich kennen?</p></div></div>
+<div class="rule"><div class="n">03</div><div><strong>Bleib verantwortlich.</strong><p>Du entscheidest, ob eine Antwort richtig, fair und für deinen Zweck geeignet ist.</p></div></div>
+<div class="rule"><div class="n">04</div><div><strong>Nutze KI als Helfer.</strong><p>Sie kann dir Arbeit abnehmen – aber dein Denken nicht vollständig ersetzen.</p></div></div>
+</div></div></section>
+
+<section id="quiz"><div class="container"><div class="quiz"><div class="kicker" style="color:#bdb8ff">04 · Teste dich</div><h2>Mini-KI-Quiz</h2><p>Eine Frage zum Einstieg – die Lösung bekommst du sofort.</p><div class="quiz-question">Welche Aussage stimmt?</div><div class="answers"><button class="answer" data-correct="false">A · KI liefert immer richtige Antworten.</button><button class="answer" data-correct="true">B · KI kann sehr hilfreich sein, aber ihre Antworten sollten geprüft werden.</button><button class="answer" data-correct="false">C · Je länger mein Prompt ist, desto automatisch besser ist er.</button></div><div class="result" id="result"></div></div></div></section>
+
+<section><div class="container"><div class="section-head"><div class="kicker">05 · Wörterbuch</div><h2>KI-Begriffe ohne Fachchinesisch</h2></div><div class="glossary"><div class="term"><strong>Prompt</strong><p>Deine Anweisung oder Frage an eine KI.</p></div><div class="term"><strong>Chatbot</strong><p>Ein Programm, mit dem du per Sprache oder Text interagierst.</p></div><div class="term"><strong>Halluzination</strong><p>Wenn eine KI etwas Falsches erzeugt und es überzeugend darstellt.</p></div><div class="term"><strong>Modell</strong><p>Das trainierte KI-System, das Eingaben verarbeitet und Ausgaben erzeugt.</p></div></div></div></section>
+
+<section><div class="container"><div class="cta"><div><div class="kicker">Dein nächster Schritt</div><h2>Einfach ausprobieren.</h2><p>Du musst nicht alles über KI wissen, bevor du anfängst. Starte mit einer kleinen Aufgabe, stelle Fragen und lerne dabei.</p></div><a class="btn primary" href="#start">Zum Einstieg ↑</a></div></div></section>
+</main>
+<footer><div class="container footer-row"><span>© 2026 KI Klartext</span><span>Wissen · Ausprobieren · Hinterfragen</span></div></footer>
+<script>
+document.querySelectorAll(".answer").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+   const result=document.getElementById("result");
+   document.querySelectorAll(".answer").forEach(b=>b.classList.remove("correct","wrong"));
+   if(btn.dataset.correct==="true"){btn.classList.add("correct");result.textContent="✓ Richtig! KI kann hilfreich sein, ist aber nicht automatisch fehlerfrei."}
+   else{btn.classList.add("wrong");result.textContent="Noch nicht. Versuch es noch einmal – eine KI kann auch überzeugend falsche Antworten geben."}
+ });
+});
+</script>
+</body>
+</html>
